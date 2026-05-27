@@ -1,5 +1,6 @@
 package com.example.practiceteaching.modules.file.controller;
 
+import com.example.practiceteaching.common.result.Result;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.core.io.FileSystemResource;
@@ -29,7 +30,15 @@ public class FileController {
      * 文件上传
      */
     @PostMapping("/upload")
-    public String upload(@RequestParam("file") MultipartFile file) throws IOException {
+    public Result<String> upload(
+            @RequestParam("file") MultipartFile file)
+            throws IOException {
+
+        // 判断文件是否为空
+        if (file.isEmpty()) {
+
+            return Result.error("上传文件不能为空");
+        }
 
         // 原始文件名
         String originalFilename =
@@ -60,8 +69,12 @@ public class FileController {
         // 上传文件
         file.transferTo(dest);
 
-        // 返回访问路径
-        return "http://localhost:8080/file/" + fileName;
+        // 文件访问地址
+        String url =
+                "http://localhost:8080/file/download/"
+                        + fileName;
+
+        return Result.success(url);
     }
 
     /**

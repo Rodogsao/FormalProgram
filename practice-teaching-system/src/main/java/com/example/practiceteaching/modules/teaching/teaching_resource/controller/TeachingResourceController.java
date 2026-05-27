@@ -1,5 +1,6 @@
 package com.example.practiceteaching.modules.teaching.teaching_resource.controller;
 
+import com.example.practiceteaching.common.result.Result;
 import com.example.practiceteaching.modules.teaching.teaching_resource.entity.TeachingResource;
 import com.example.practiceteaching.modules.teaching.teaching_resource.service.TeachingResourceService;
 import jakarta.annotation.Resource;
@@ -17,23 +18,35 @@ public class TeachingResourceController {
     @Resource
     private TeachingResourceService teachingResourceService;
 
+    /**
+     * 查询全部资源
+     */
     @GetMapping("/list")
-    public List<TeachingResource> list(){
+    public Result<List<TeachingResource>> list(){
 
-        return teachingResourceService.list();
+        return Result.success(
+                teachingResourceService.list()
+        );
     }
 
+    /**
+     * 新增资源
+     */
     @PostMapping("/save")
-    public String save(
+    public Result<String> save(
             @RequestBody TeachingResource resource){
 
         teachingResourceService.save(resource);
 
-        return "success";
+        return Result.success("新增成功");
     }
 
+    /**
+     * 删除资源
+     */
     @DeleteMapping("/delete/{id}")
-    public String delete(@PathVariable Long id){
+    public Result<String> delete(
+            @PathVariable Long id){
 
         // 查询资源
         TeachingResource resource =
@@ -42,7 +55,7 @@ public class TeachingResourceController {
         // 判断资源是否存在
         if(resource == null){
 
-            return "resource not found";
+            return Result.error("资源不存在");
         }
 
         // 获取文件URL
@@ -73,20 +86,26 @@ public class TeachingResourceController {
         // 删除数据库记录
         teachingResourceService.delete(id);
 
-        return "success";
+        return Result.success("删除成功");
     }
 
+    /**
+     * 修改资源
+     */
     @PutMapping("/update")
-    public String update(
+    public Result<String> update(
             @RequestBody TeachingResource resource){
 
         teachingResourceService.update(resource);
 
-        return "success";
+        return Result.success("修改成功");
     }
 
+    /**
+     * 分页查询
+     */
     @GetMapping("/page")
-    public IPage<TeachingResource> page(
+    public Result<IPage<TeachingResource>> page(
 
             @RequestParam Integer pageNum,
 
@@ -102,12 +121,15 @@ public class TeachingResourceController {
             String resourceType
     ) {
 
-        return teachingResourceService.page(
-                pageNum,
-                pageSize,
-                resourceName,
-                courseName,
-                resourceType
-        );
+        IPage<TeachingResource> page =
+                teachingResourceService.page(
+                        pageNum,
+                        pageSize,
+                        resourceName,
+                        courseName,
+                        resourceType
+                );
+
+        return Result.success(page);
     }
 }
