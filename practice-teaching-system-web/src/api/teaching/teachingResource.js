@@ -1,4 +1,4 @@
-import request from './request'
+import request from '../request'
 
 // 分页查询
 export function getResourcePage(params) {

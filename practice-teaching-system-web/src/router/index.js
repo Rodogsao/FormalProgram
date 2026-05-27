@@ -1,16 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import TeachingResource from '@/views/teachingResource/index.vue'
+import teachingRoutes from './modules/teaching'
 
 const routes = [
+
+    // 首页重定向(目前定向到教学系统)
     {
         path: '/',
         redirect: '/teaching/resource'
     },
-    {
-        path: '/teaching/resource',
-        component: TeachingResource
-    }
+
+    // 模块路由
+    ...teachingRoutes
 ]
 
 const router = createRouter({
