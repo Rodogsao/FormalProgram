@@ -7,25 +7,16 @@
 main  
 └── dev  
 ├── module/resource  
-│ ├── module/resource/upload  
-│ ├── module/resource/download  
-│ ├── module/resource/search  
-│ ├── module/resource/minio  
-│ └── module/resource/es  
+│ ├── feature/resource-upload  
+│ ├── feature/resource-download  
 │  
 ├── module/auth  
-│ ├── module/auth/login  
-│ ├── module/auth/jwt  
-│ └── module/auth/rbac  
-│  
-├── module/project  
-│ ├── module/project/approval  
-│ └── module/project/export  
-
+│ ├── feature/auth-login  
+│ ├── feature/auth-jwt  
 
 - `main` 是主分支  
 - `dev` 是开发分支  
 - `module/resource` 是模块分支  
-- `module/resource/upload` 是模块开发的功能分支  
+- `feature/resource-upload` 是模块开发的功能分支  
 
 > **注意**：创建分支时请确认上一级的分支。
