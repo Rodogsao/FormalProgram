@@ -1,8 +1,8 @@
-package com.resource.controller;
+package com.example.practiceteaching.modules.resource.resource_management.controller;
 
-import com.resource.common.Result;
-import com.resource.entity.Classroom;
-import com.resource.service.ClassroomService;
+import com.example.practiceteaching.common.result.Result;
+import com.example.practiceteaching.modules.resource.resource_management.entity.Classroom;
+import com.example.practiceteaching.modules.resource.resource_management.service.ClassroomService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;

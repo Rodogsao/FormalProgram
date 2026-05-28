@@ -1,9 +1,9 @@
-package com.resource.controller;
+package com.example.practiceteaching.modules.resource.resource_management.controller;
 
-import com.resource.entity.ResourceAllocate;
-import com.resource.service.ResourceAllocateService;
-import com.resource.mapper.ResourceAllocateMapper;
-import com.resource.common.Result;
+import com.example.practiceteaching.modules.resource.resource_management.entity.ResourceAllocate;
+import com.example.practiceteaching.modules.resource.resource_management.service.ResourceAllocateService;
+import com.example.practiceteaching.modules.resource.resource_management.mapper.ResourceAllocateMapper;
+import com.example.practiceteaching.common.result.Result;
 import lombok.RequiredArgsConstructor;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.web.bind.annotation.*;

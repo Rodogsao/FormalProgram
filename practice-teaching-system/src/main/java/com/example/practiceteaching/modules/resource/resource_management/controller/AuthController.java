@@ -1,10 +1,10 @@
-package com.resource.controller;
+package com.example.practiceteaching.modules.resource.resource_management.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.resource.common.Result;
-import com.resource.entity.User;
-import com.resource.mapper.UserMapper;
-import com.resource.utils.JwtUtils;
+import com.example.practiceteaching.common.result.Result;
+import com.example.practiceteaching.modules.resource.resource_management.entity.User;
+import com.example.practiceteaching.modules.resource.resource_management.mapper.UserMapper;
+import com.example.practiceteaching.modules.resource.resource_management.utils.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

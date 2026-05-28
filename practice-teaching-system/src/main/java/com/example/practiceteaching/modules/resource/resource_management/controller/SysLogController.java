@@ -1,7 +1,7 @@
-package com.resource.controller;
+package com.example.practiceteaching.modules.resource.resource_management.controller;
 
-import com.resource.common.Result;
-import com.resource.service.SysLogService;
+import com.example.practiceteaching.common.result.Result;
+import com.example.practiceteaching.modules.resource.resource_management.service.SysLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

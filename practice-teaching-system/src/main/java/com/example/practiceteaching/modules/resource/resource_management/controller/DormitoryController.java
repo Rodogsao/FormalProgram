@@ -1,11 +1,11 @@
-package com.resource.controller;
+package com.example.practiceteaching.modules.resource.resource_management.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.resource.common.Result;
-import com.resource.entity.Dormitory;
-import com.resource.service.DormitoryService;
+import com.example.practiceteaching.common.result.Result;
+import com.example.practiceteaching.modules.resource.resource_management.entity.Dormitory;
+import com.example.practiceteaching.modules.resource.resource_management.service.DormitoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
